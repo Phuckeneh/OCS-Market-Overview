@@ -830,13 +830,13 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 <script>
 
-const MERA = OCS_DATA.mera_lp;
-const MERA_BRANDS = new Set(OCS_DATA.mera_brands);
-const COLORS = ['#7c3aed','#06b6d4','#10b981','#f59e0b','#ef4444','#8b5cf6','#3b82f6','#ec4899','#14b8a6','#f97316','#6366f1','#84cc16','#a855f7','#0ea5e9','#22c55e'];
-const MERA_COLOR = '#f59e0b';
+var MERA = OCS_DATA.mera_lp;
+var MERA_BRANDS = new Set(OCS_DATA.mera_brands);
+var COLORS = ['#7c3aed','#06b6d4','#10b981','#f59e0b','#ef4444','#8b5cf6','#3b82f6','#ec4899','#14b8a6','#f97316','#6366f1','#84cc16','#a855f7','#0ea5e9','#22c55e'];
+var MERA_COLOR = '#f59e0b';
 
 // ── State ────────────────────────────────────────────
-let state = {
+var state = {
   overviewPeriod: 'monthly',
   lpPeriod: 'monthly',
   brandPeriod: 'monthly',
@@ -847,7 +847,7 @@ let state = {
   catTab: 'subcat',
 };
 
-let charts = {};
+var charts = {};
 
 // ── Helpers ──────────────────────────────────────────
 function fmt$(v){ return '$'+(v>=1e6?(v/1e6).toFixed(2)+'M':v>=1e3?(v/1e3).toFixed(0)+'K':v.toFixed(0)); }
@@ -1624,7 +1624,7 @@ function renderSubSubCat(){
 // ══════════════════════════════════════════════════════
 // PRICING INTELLIGENCE
 // ══════════════════════════════════════════════════════
-let activePricingTier = 'Good';
+var activePricingTier = 'Good';
 
 function renderPricing(){
   const month  = document.getElementById('pricing-month').value;
@@ -1806,7 +1806,7 @@ function renderPricingProducts(){
 // ══════════════════════════════════════════════════════
 // MERA CANNABIS
 // ══════════════════════════════════════════════════════
-let meraScopeState = 'top10';
+var meraScopeState = 'top10';
 
 function setMeraPeriod(type, btn){
   state.meraPeriod = type;
@@ -2004,9 +2004,9 @@ function renderMera(){
 // ══════════════════════════════════════════════════════
 // SKU FULFILLMENT
 // ══════════════════════════════════════════════════════
-let ftTabState = 'overview';
-let ftTypeState = 'all';
-let upgradeFilterState = 'all';
+var ftTabState = 'overview';
+var ftTypeState = 'all';
+var upgradeFilterState = 'all';
 
 function setFTTab(tab, btn){
   ftTabState = tab;
@@ -2280,7 +2280,7 @@ function renderFTMera(){
 // ══════════════════════════════════════════════════════
 // TOP 25 SKUs
 // ══════════════════════════════════════════════════════
-let top25ScopeState = 'overall';
+var top25ScopeState = 'overall';
 
 function setTop25Scope(scope, btn){
   top25ScopeState = scope;
@@ -2379,8 +2379,8 @@ function renderTop25(){
 // ══════════════════════════════════════════════════════
 // INNOVATION INTELLIGENCE ENGINE
 // ══════════════════════════════════════════════════════
-let innoCat = 'preroll';
-let innoView = 'quarterly'; // 'alltime' | 'quarterly' | 'monthly'
+var innoCat = 'preroll';
+var innoView = 'quarterly'; // 'alltime' | 'quarterly' | 'monthly'
 
 function setInnoView(view, btn){
   innoView = view;
@@ -2699,8 +2699,8 @@ function renderInnoDetailRows(data, isClick){
 // ══════════════════════════════════════════════════════
 // LP GROWTH TABLE
 // ══════════════════════════════════════════════════════
-let lpGrowthSortCol = 'chgSales';
-let lpGrowthSortDir = 1; // 1=desc, -1=asc
+var lpGrowthSortCol = 'chgSales';
+var lpGrowthSortDir = 1; // 1=desc, -1=asc
 
 function setLPGrowthDir(dir, btn){
   window._lpGrowthDir = dir;
